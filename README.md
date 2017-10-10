@@ -123,3 +123,17 @@ public class Category
 
 ## 5. Main Class "Application.java"
 * create main class to test the code
+* example :
+```
+    // new category
+    Category category_a = new Category();
+    category_a.setName("Cat a");
+    session.save(category_a);
+
+    // new product
+    Product product_x = new Product();
+    product_x.setName("Prod x");
+    product_x.setPrice(456);
+    product_x.setCategory(category_a);
+    session.save(product_x);
+```
