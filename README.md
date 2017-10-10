@@ -1,5 +1,5 @@
 # hibernate-tutorial4
-Hibernate tutorial 3 : "Many To One" association
+Hibernate tutorial 4 : **"Many To One"** association
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg?style=flat)](https://github.com/nfriaa/hibernate-tutorial4/issues) [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/nfriaa/hibernate-tutorial4) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/nfriaa/hibernate-tutorial4/blob/master/LICENSE)
 
@@ -7,13 +7,13 @@ Hibernate tutorial 3 : "Many To One" association
 A sample code to learn how to map **"Many To One"** relationship between two entities using the Hibernate ORM.
 * JavaSE 8
 * Hibernate 5 / Annotations
-* Hibernate "Many To One" association
+* Hibernate **"Many To One"** association
 * Maven 4
 * MySQL 5
 
 ## 1. Database
 Create only database, don't create tables (tables will be created by Hibernate)
-* database name : persist_db
+* database name : **persist_db**
 
 ## 2. Maven "pom.xml" dependencies
 ```
@@ -51,15 +51,16 @@ Create only database, don't create tables (tables will be created by Hibernate)
         <property name="hibernate.hbm2ddl.auto">create</property>
 
         <!-- Entities -->
-        <mapping class="net.isetjb.hibernatetutorial3.Product"/>
-        <mapping class="net.isetjb.hibernatetutorial3.Category"/>
+        <mapping class="net.isetjb.hibernatetutorial4.Product"/>
+        <mapping class="net.isetjb.hibernatetutorial4.Category"/>
     </session-factory>
 </hibernate-configuration>
 ```
 * hibernate.hbm2ddl.auto : "create" => creates the schema necessary for defined entities, destroying any previous data
+* don't forget to map the two entities in this XML config file (Product and Category)
 
 ## 4. "Many To One" association
-**Product.java**
+Source entity : **Product.java**
 ```
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -93,10 +94,10 @@ public class Product
     // Getters and Setters here...
 ```
 * @ManyToOne : is equivalent to foreign key relationship in a database
-* @JoinColumn : name of the foreign key column in the source entity
-* @ForeignKey : name of the constraint (foreign key) in the destination entity
+* @JoinColumn : name of the foreign key column in the *source entity*
+* @ForeignKey : name of the constraint (foreign key) in the *destination entity*
 
-**Category.java**
+Destination entity : **Category.java**
 ```
 import javax.persistence.Column;
 import javax.persistence.Entity;
