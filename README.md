@@ -60,7 +60,7 @@ Create only database, don't create tables (tables will be created by Hibernate)
 * don't forget to map the two entities in this XML config file (Product and Category)
 
 ## 4. "Many To One" association
-Source entity : **Product.java**
+* Source entity : **Product.java**
 ```
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -92,12 +92,13 @@ public class Product
     private Category category;
 
     // Getters and Setters here...
+}
 ```
 * @ManyToOne : is equivalent to foreign key relationship in a database
 * @JoinColumn : name of the foreign key column in the *source entity*
 * @ForeignKey : name of the constraint (foreign key) in the *destination entity*
 
-Destination entity : **Category.java**
+* Destination entity : **Category.java**
 ```
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -119,6 +120,7 @@ public class Category
     private String name;
 
     // Getters and Setters here...
+}
 ```
 
 ## 5. Main Class "Application.java"
